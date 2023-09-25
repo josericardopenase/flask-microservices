@@ -14,25 +14,27 @@ services:
       - my_network
 
   posts:
+    container_name: posts
     build: ./posts_service
     ports:
-      - "5004:5004"
+      - "5004"
     networks:
       - my_network
 
   cars:
+    container_name: cars
     build: ./cars_service
     ports:
-      - "5005:5005"
+      - "5005"
     networks:
       - my_network
 
   auth:
+    container_name: auth
     build: ./auth_service
     ports:
-      - "5003:5003"
+      - "5003"
     networks:
       - my_network
-
 networks:
   my_network:

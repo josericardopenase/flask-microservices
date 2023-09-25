@@ -24,7 +24,7 @@ def cars():
         return CarSerializer(car).to_json()
 
 if __name__ == '__main__':
-    app.run("0.0.0.0", port=5005)
+    app.run('cars', port=5005)
 
 
 

@@ -8,7 +8,7 @@ app = Flask(__name__)
 db.connect()
 db.create_tables([User])
 
-@app.route("/login", methods=['POST'])
+@app.route("/auth/login", methods=['POST'])
 def login():
     try:
         data = request.get_json()
@@ -32,7 +32,7 @@ def login():
                 "error" : "Internal server error"
         }
 
-@app.route("/register", methods=['POST'])
+@app.route("/auth/register", methods=['POST'])
 def register():
     try:
         data = request.get_json()
@@ -58,5 +58,5 @@ def register():
                 "error" : "Internal server error"
         }
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5003)
+    app.run(host='auth', port=5003)
 
